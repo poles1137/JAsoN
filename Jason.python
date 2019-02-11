@@ -1,0 +1,123 @@
+
+
+
+
+
+import random, time
+
+
+
+
+
+#Taking user name to let jason interact with him.
+name = input("What's your name: ")
+
+tellMeMotive = ['mot quote', 'mot me', 'mot']
+#Jason's respon to the user.
+intro =( "Here are few things i can do for you\n "
+                "I can tell you one of the following things: \n1- Jokes\n 2- Motivition quotes")
+#Greetings expecting from the user to enter.
+greetings = ['hello', 'hi', 'hii', 'hey', 'sup' , "what's up"]
+#Jason respon to user's greeting.
+respons = ['Hi!, I am Jason:)', 'Hello there it is me Jason', 'Sup! it is your boy Jason', "Hey it's Jason"]
+
+# List of motivition quotes.
+motive = ['The best person you could ever be is your self', 'you are smart way more then you think', 'Be your self, you will know who trully loves you then']
+# List of jokes.
+jokes = ["The doctor to the patient: You are very sick\n"
+"\nThe patient to the doctor: Can I get a second opinion?\n"
+"The doctor again: Yes, you are very ugly too...", "Two boys were arguing when the teacher entered the room.\n"
+"The teacher says, Why are you arguing?\n"
+
+"One boy answers, We found a ten dollor bill and decided to give it to whoever tells the biggest lie.\n"
+
+"You should be ashamed of yourselves, said the teacher, When I was your age I didnt even know what a lie was.\n"
+
+"The boys gave the ten dollars to the teacher.\n ","A snail walks into a bar and the barman tells him there's a strict policy about having snails in the bar and so kicks him out. \n, A year later the same snail re-enters the bar and asks the barman  What did you do that for?",
+         
+         "A: "'Why are you crying?\n '
+"B: "'The elephant is dead.\n'
+"A: " 'Was he your pet?\n '
+"B: " "No, but I'm the one who must dig his grave. ", "PUPIL: 'Would you punish me for something I didn`t do?\n"
+"TEACHER:"' Of course not.\n'
+" PUPIL: " 'Good, because I haven`t done my homework.' , "Little Johnny:" 'Teacher, can I go to the bathroom?\n '
+"Teacher: "'Little Johnny, MAY I go to the bathroom?\n '
+"Little Johnny: " 'But I asked first!',  "Son:" ' Dad, what is an idiot? '
+"Dad:" " An idiot is a person who tries to explain his ideas in such a strange and long way that another person who is listening to him can't understand him. Do you understand me? \n"
+"Son:" ' No.\n',  "Teacher:" " Why are you late?\n" 
+"Student:" " There was a man who lost a hundred dollar bill.\n "
+"Teacher:" " That's nice. Were you helping him look for it? \n"
+"Student: " "No. I was standing on it. ",  "Two cows are standing in a field.\n"
+"One says to the other ,Are you worried about Mad Cow Disease?\n"
+"The other one says ,No, It doesn't worry me, I'm a horse!"]
+# A user will type one of this word if he want a joke
+tellMeJokes = ['can you tell me a joke', 'tell me a joke', ' crack me up', 'okay tell me a joke' , 'joke']
+# This for continution if the user need more then he should type yes or yeah otherwise no.
+alt = ['yeah', 'yes' ,'yup', 'yah']
+
+
+
+
+
+
+
+while True:
+    sayHello = input(f" JAsoN>>>: Hi! {name} type a greeting message to start chatting with me: ")
+    if sayHello in greetings:
+        # Jason will chose random welcoming each time the user greet him.
+        welcoming = random.choice(respons)
+        time.sleep(1)
+        print("JAsoN>>>: ", welcoming)
+        time.sleep(2)
+        print()
+        print(intro)
+        #break
+    #break
+
+    while True: 
+        userRespon = input("You can type what you want to hear here: ")
+        if userRespon in tellMeJokes:
+            # Jason will  chose a random joke each time
+            jk = random.choice(jokes)
+            time.sleep(1)
+            print()
+            print()
+            print("JAsoN>>>: ", jk, ":)")
+            # Here asking the user if he/she need more or if he/she don't want to exit from the program
+            cont = input("Do you want more?: ")
+            if cont in alt:
+                continue
+        #elif cont not in alt:
+            #print()
+            #print()
+            #time.sleep(1)
+            #print("if you want more just type yes or no if you don't :)")
+            #continue
+            else:
+                print()
+                print(f"JAsoN>>>: Goodbye {name}")
+                break
+        
+        if userRespon in tellMeMotive:
+            # Jason will chose random motivional quote everytime if the user request.
+            mot = random.choice(motive)
+            time.sleep(1)
+            print()
+            print()
+            print("JAsoN>>>: ", mot)
+            cont2 = input("Do you want more?: ")
+        if cont2  in alt:
+            continue
+        else:
+            time.sleep(1)
+            print(f"JAsoN>>>:  Goodbye {name}")
+            break
+    else:
+        time.sleep(1)
+        print()
+        print()
+        print("JAsoN>>>: " 'I do not understand you\n ')#type a greeting message if you want my services.')
+        continue
+    
+    
+    
