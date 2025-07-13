@@ -1,2 +1,2 @@
 # JAsoN
-A wired joke teller
+your entertainer/motivator😆
